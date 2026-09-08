@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>APOIO</title>
+
+    <link rel="stylesheet" href="./reserva-item.css">
+</head>
+
+<body>
+
+    <img
+        class="logo"
+        src="./assets/vix-logo.png"
+        alt="VIX"
+    >
+
+    <button
+        class="botao-voltar"
+        onclick="window.location.href='index.html'"
+    >
+        ← VOLTAR
+    </button>
+
+
+    <!-- =====================================================
+         TABELA — RESERVA / ITEM
+         ===================================================== -->
+
+<div class="tabela-container">
+
+    <table class="tabela-reserva-item">
+
+        <thead>
+            <tr>
+                <th>Reserva</th>
+                <th>Item</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabela-body">
+            <!-- Linhas geradas pelo JavaScript -->
+        </tbody>
+
+    </table>
+
+</div>
+
+<div class="executar-container">
+    <button
+        class="botao-executar botao-block"
+        onclick="executar()"
+    >
+        EXPORTAR
+    </button>
+</div>
+    
+<footer class="footer">Vix Logística • Unidade Macaé</footer>
+
+    <script src="./reserva-item.js"></script>
+
+</body>

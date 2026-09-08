@@ -1,0 +1,446 @@
+/* =========================================================
+   VIX - INTERFACE VERDE
+   ========================================================= */
+
+:root {
+    --vix-green: #00c853;
+    --vix-green-dark: #009624;
+    --vix-green-light: #69f0ae;
+
+    --bg-main: #07110b;
+    --bg-panel: #0b1710;
+    --bg-panel-2: #0f1f15;
+
+    --border: #31532f;
+    --border-dark: #163a25;
+
+    --text: #e8f5e9;
+    --text-muted: #8fa99a;
+
+    --danger: #ff4d4d;
+    --warning: #f59e0b;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px 25px;
+
+    background-image: url("./assets/login-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   LOGO VIX
+   ========================================================= */
+
+.logo {
+    position: fixed;
+
+    top: 20px;
+    left: 20px;
+
+    width: 60px;
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   BOTÕES VIX — PADRÃO
+   ========================================================= */
+
+
+.botao-block {
+    opacity: 0.8;
+    cursor: not-allowed !important;
+
+}
+
+.botao-block:hover {
+    opacity: 0.8;
+    cursor: not-allowed !important;
+    border: 1px solid #31532f !important;
+    background: rgba(15, 30, 20, 0.90) !important;
+
+}
+
+.botao-voltar,
+.botao-executar {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 12px;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    background: rgba(15, 30, 20, 0.90);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.25),
+        inset 0 0 15px rgba(0, 200, 83, 0.025);
+
+    transition:
+        background 150ms ease,
+        border-color 150ms ease,
+        transform 150ms ease,
+        box-shadow 150ms ease;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   BOTÃO — VOLTAR
+   ========================================================= */
+
+.botao-voltar {
+    position: fixed;
+
+    top: 90px;
+    left: 20px;
+
+    width: 60px;
+    height: 28px;
+}
+
+
+/* =========================================================
+   BOTÃO — EXECUTAR
+   ========================================================= */
+
+.botao-executar {
+    position: fixed;
+
+    top: 90px;
+    right: 20px;
+
+    width: 70px;
+    height: 28px;
+}
+
+/* =========================================================
+   HOVER — BOTÕES
+   ========================================================= */
+
+.botao-voltar:hover,
+.botao-executar:hover {
+    background: var(--vix-green-dark);
+
+    border-color: #3f7045;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 24px rgba(0, 0, 0, 0.30),
+        inset 0 0 15px rgba(0, 200, 83, 0.05);
+}
+
+
+/* =========================================================
+   FOCO — BOTÕES
+   ========================================================= */
+
+.botao-voltar:focus-visible,
+.botao-executar:focus-visible {
+    outline: 2px solid var(--vix-green-light);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   CLIQUE — BOTÕES
+   ========================================================= */
+
+.botao-voltar:active,
+.botao-executar:active {
+    background: #005c24;
+
+    transform: translateY(0);
+}
+
+/* =========================================================
+   TABELA — CONTAINER
+   ========================================================= */
+
+.tabela-container {
+    position: fixed;
+
+    top: 130px;
+
+    left: 50%;
+
+    width: min(600px, calc(100vw - 40px));
+
+    height: calc(100vh - 190px);
+
+    transform: translateX(-50%);
+
+    overflow-y: auto;
+    overflow-x: visible;
+
+    border: 1px solid var(--border-dark);
+
+    border-radius: 8px;
+
+    background: rgba(11, 23, 16, 0.90);
+
+    box-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.35),
+        inset 0 0 20px rgba(0, 200, 83, 0.025);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   BARRA DE ROLAGEM
+   ========================================================= */
+
+.tabela-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tabela-container::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
+.tabela-container::-webkit-scrollbar-thumb {
+    background: #1c2512c4;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--border-dark);
+}
+
+.tabela-container::-webkit-scrollbar-thumb:hover {
+    background: var(--vix-green-dark);
+}
+
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+.tabela-reserva-item {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.tabela-reserva-item th {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 2;
+
+    width: 50%;
+
+    padding: 12px 16px;
+
+    color: #ffffff;
+
+    background: rgba(15, 30, 20, 0.95);
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   CÉLULAS
+   ========================================================= */
+
+.tabela-reserva-item td {
+    width: 50%;
+
+    height: 42px;
+
+    padding: 5px 10px;
+
+    background: rgba(15, 31, 21, 0.85);
+
+    border-bottom: 1px solid var(--border-dark);
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.tabela-reserva-item input {
+    width: 100%;
+
+    height: 32px;
+
+    padding: 6px 10px;
+
+    border: 1px solid var(--border-dark);
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background: rgba(7, 17, 11, 0.80);
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color 150ms ease,
+        background 150ms ease,
+        box-shadow 150ms ease;
+}
+
+
+/* =========================================================
+   FOCO — CAMPOS
+   ========================================================= */
+
+.tabela-reserva-item input:focus {
+    border-color: var(--vix-green-dark);
+
+    background: rgba(7, 17, 11, 0.95);
+
+    box-shadow:
+        0 0 0 1px rgba(0, 200, 83, 0.15);
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.footer {
+    position: fixed;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(600px, calc(100vw - 40px));
+
+    padding: 5px;
+
+    color: var(--neutral-500);
+
+    font-size: 12px;
+
+    line-height: 16px;
+
+    text-align: center;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   JANELA PEQUENA
+   ========================================================= */
+
+@media (max-height: 500px) {
+
+    .tabela-container {
+        top: 100px;
+
+        height: calc(100vh - 175px);
+    }
+
+    .footer {
+        display: none;
+    }
+}
