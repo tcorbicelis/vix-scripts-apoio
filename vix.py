@@ -9,7 +9,7 @@ class VIX:
     def _init_(self):
 
         self.pasta_principal = os.path.dirname(
-            os.path.abspath(_file_)
+            os.path.abspath(__file__)
         )
 
         print("Pasta principal:")
@@ -129,7 +129,7 @@ class VIX:
 # ==========================================================
 
 pasta_principal = os.path.dirname(
-    os.path.abspath(_file_)
+    os.path.abspath(__file__)
 )
 
 
