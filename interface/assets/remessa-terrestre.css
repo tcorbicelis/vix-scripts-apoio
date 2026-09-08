@@ -1,0 +1,628 @@
+/* =========================================================
+   VIX - INTERFACE VERDE
+   ========================================================= */
+
+:root {
+    --vix-green: #00c853;
+    --vix-green-dark: #009624;
+    --vix-green-light: #69f0ae;
+
+    --bg-main: #07110b;
+    --bg-panel: #0b1710;
+    --bg-panel-2: #0f1f15;
+
+    --border: #163a25;
+    --text: #e8f5e9;
+    --text-muted: #8fa99a;
+
+    --danger: #ff4d4d;
+    --warning: #f59e0b;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px 25px;
+
+    background-image: url("./assets/login-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   LOGO VIX
+   ========================================================= */
+
+.logo {
+    width: 100px;
+    height: auto;
+
+    margin-bottom: 15px;
+
+    object-fit: contain;
+
+    text-align: center;
+}
+
+/* =========================================================
+   BOTÃO — VOLTAR
+   ========================================================= */
+
+.botao-voltar {
+    position: fixed;
+
+    top: 90px;
+    left: 20px;
+
+    width: 60px;
+    height: 28px;
+}
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+#teste {
+    width: min(600px, 90vw);
+
+    margin-bottom: 30px;
+    padding: 16px 20px;
+
+    border: 1px solid #31532f;
+
+    border-radius: 8px;
+
+    background: rgba(15, 30, 20, 0.90);
+
+    color: #d8e4d6;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.35),
+        inset 0 0 20px rgba(0, 200, 83, 0.025);
+}
+
+
+/* =========================================================
+   CONTAINER DOS BOTÕES
+   ========================================================= */
+
+.botoes {
+    width: min(600px, 90vw);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   BOTÕES DA INTERFACE
+   ========================================================= */
+
+.botoes button {
+    flex: 0 0 calc(50% - 10px);
+
+    min-width: 0;
+    min-height: 44px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 24px;
+
+    border: 1px solid #31532f;
+    border-radius: 8px;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+
+    letter-spacing: 0.2px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    background: rgba(15, 30, 20, 0.90);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.25),
+        inset 0 0 15px rgba(0, 200, 83, 0.025);
+
+    transition:
+        background 150ms ease,
+        border-color 150ms ease,
+        transform 150ms ease,
+        box-shadow 150ms ease;
+}
+
+
+/* =========================================================
+   BOTÃO — VOLTAR
+   ========================================================= */
+
+.botao-voltar {
+    position: fixed;
+
+    top: 90px;
+    left: 20px;
+
+    width: 60px;
+    height: 28px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #31532f;
+    border-radius: 6px;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 12px;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    background: rgba(15, 30, 20, 0.90);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.25),
+        inset 0 0 15px rgba(0, 200, 83, 0.025);
+
+    transition:
+        background 150ms ease,
+        border-color 150ms ease,
+        transform 150ms ease,
+        box-shadow 150ms ease;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   FOCO — BOTÃO VOLTAR
+   ========================================================= */
+
+.botao-voltar:focus-visible {
+    outline: 2px solid #69f0ae;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   HOVER — BOTÃO VOLTAR
+   ========================================================= */
+
+.botao-voltar:hover {
+    background: #006b2a;
+
+    border-color: #3f7045;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 24px rgba(0, 0, 0, 0.30),
+        inset 0 0 15px rgba(0, 200, 83, 0.05);
+}
+
+
+/* =========================================================
+   CLIQUE — BOTÃO VOLTAR
+   ========================================================= */
+
+.botao-voltar:active {
+    background: #005c24;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FOCO — BOTÕES DA INTERFACE
+   ========================================================= */
+
+.botoes button:focus-visible {
+    outline: 2px solid #69f0ae;
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   HOVER — BOTÕES DA INTERFACE
+   ========================================================= */
+
+.botoes button:hover {
+    background: #006b2a;
+
+    border-color: #3f7045;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 24px rgba(0, 0, 0, 0.30),
+        inset 0 0 15px rgba(0, 200, 83, 0.05);
+}
+
+
+/* =========================================================
+   CLIQUE — BOTÕES DA INTERFACE
+   ========================================================= */
+
+.botoes button:active {
+    background: #005c24;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   DESABILITADO
+   ========================================================= */
+
+.botoes button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    background: #183322;
+
+    border-color: #294633;
+
+    color: #8fa99a;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+/* =========================================================
+   CASO VOCÊ USE O BOTÃO DO JAVASCRIPT
+   ========================================================= */
+
+#executeButton {
+    position: relative;
+
+    width: min(600px, 90vw);
+    min-height: 58px;
+
+    border: 1px solid var(--vix-green);
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #00c853,
+        #00a844
+    );
+
+    color: #031108;
+
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(0, 200, 83, 0.20),
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+    transition: 0.2s ease;
+}
+
+
+#executeButton:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(0, 200, 83, 0.40),
+        0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+
+#executeButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+.button-icon {
+    margin-right: 8px;
+}
+
+
+/* =========================================================
+   PAINEL DE STATUS
+   ========================================================= */
+
+#statusText {
+    margin-top: 25px;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+#statusIndicator {
+    width: 10px;
+    height: 10px;
+
+    margin-top: 10px;
+
+    border-radius: 50%;
+
+    background: var(--vix-green);
+
+    box-shadow:
+        0 0 10px var(--vix-green);
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   LOG
+   ========================================================= */
+
+#log {
+    width: min(600px, 90vw);
+    min-height: 180px;
+    max-height: 300px;
+
+    margin-top: 25px;
+    padding: 15px;
+
+    overflow-y: auto;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: #050d08;
+
+    font-family:
+        "Consolas",
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.35),
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   LINHAS DO LOG
+   ========================================================= */
+
+.log-line {
+    padding: 6px 8px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.025);
+
+    color: #91a99a;
+
+    line-height: 1.5;
+}
+
+
+.log-line.info {
+    color: #8ab89a;
+}
+
+
+.log-line.success {
+    color: var(--vix-green-light);
+
+    text-shadow:
+        0 0 8px rgba(105, 240, 174, 0.25);
+}
+
+
+.log-line.error {
+    color: var(--danger);
+}
+
+
+.log-line.warning {
+    color: var(--warning);
+}
+
+
+/* =========================================================
+   BOTÃO LIMPAR LOG
+   ========================================================= */
+
+#clearLog {
+    margin-top: 12px;
+
+    padding: 9px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background: var(--bg-panel);
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+#clearLog:hover {
+    border-color: var(--vix-green);
+
+    color: var(--vix-green);
+
+    background: rgba(0, 200, 83, 0.05);
+
+    box-shadow:
+        0 0 10px rgba(0, 200, 83, 0.10);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #050d08;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #14552f;
+
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--vix-green);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 35px 15px;
+    }
+
+    h1 {
+        font-size: 40px;
+        letter-spacing: 6px;
+    }
+
+    #teste,
+    #executeButton,
+    #log {
+        width: 100%;
+    }
+
+    .botoes {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .botoes {
+        width: 100%;
+        padding: 11px 10px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.footer {
+    padding: 18px 24px;
+    color: var(--neutral-500);
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+}
